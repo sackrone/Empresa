@@ -1,0 +1,30 @@
+﻿@model Empresa.Models.ViewModels.EmpleadosViewModel
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+<h2>Nuevo</h2>
+<br/>
+
+@using (Html.BeginForm("Nuevo", "Empleados", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.LabelFor(d => d.Nombre)
+            @Html.TextBoxFor(d => d.Nombre, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(d => d.Nombre)
+            @Html.LabelFor(d => d.Correo)
+            @Html.TextBoxFor(d => d.Correo, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(d => d.Correo)
+            @Html.LabelFor(d => d.FechaNacimiento)
+            @Html.TextBoxFor(d => d.FechaNacimiento, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(d => d.FechaNacimiento)
+
+            <div>
+                <input value="Guardar" class="btn btn-primary" type="submit" />
+            </div>
+        </div>
+    </div>
+}
+
+

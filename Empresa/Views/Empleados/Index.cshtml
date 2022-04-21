@@ -1,0 +1,31 @@
+﻿@model List<Empresa.Models.ViewModels.EmpleadosViewModel>
+
+@{
+    ViewBag.Title = "Mis Datos";
+}
+
+<h2>ViewBag.Title</h2>
+
+<div class="row">
+    <a href="~/Empleado/Nuevo" class="btn btn-primary">Nuevo</a>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+            </tr>
+            @foreach(var oElemento in Model)
+            {
+                <tr>
+                    <td>@oElemento.Id</td>
+                    <td>@oElemento.Nombre</td>
+                    <td>@oElemento.Correo</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
